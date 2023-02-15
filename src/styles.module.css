@@ -5,7 +5,10 @@
     justify-content: center;
     align-items: center;
     gap: 10%;
-    
+    padding-left: 15%;
+    padding-right: 15%;
+    box-sizing: border-box;
+
 }
 
 .card {

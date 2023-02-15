@@ -28,7 +28,7 @@ function App() {
       <h1 style={{ textAlign: "center" }}>Pokemon team</h1>
       <div className={s.container}>
         <div>
-       
+        <h2>Choose your {teamLimit} pokemons</h2>
           <div className={s.card}>
             <PokemonList
               pokemon={currentPokemon}
@@ -38,10 +38,10 @@ function App() {
 
         
         </div>
- <button onClick={onAddBtnClick}>
-            Add {currentPokemon?.name} to your team  
-            <img src={currentPokemon?.sprites?.normal}></img>
-          </button>
+        <button onClick={onAddBtnClick}>
+              Add {currentPokemon?.name} to your team  
+              <img src={currentPokemon?.sprites?.normal}></img>
+            </button>
         <div >
           <p>Your team: {selectedPokemons.length}</p>
           <div className={s.card}>

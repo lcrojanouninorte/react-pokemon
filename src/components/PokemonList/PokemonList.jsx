@@ -5,21 +5,21 @@ import PokemonItem from '../PokemonItem/PokemonItem'
 const PokemonList = (props) => {
   return (
     <div>
-      <h2>choose your 5 pokemons</h2>
-      <ul>
+     
+      <div>
 
       {
         POKEMONS.map((pokemon, idx)=>(
-          <li key={idx}>
+          <p key={idx}>
            <PokemonItem
             isSelected={props.pokemon === pokemon}
            pokemon={pokemon}
            onClick={props.onPokemonItemClick}
            />
-          </li>
+          </p>
         ))
       }
-      </ul>
+      </div>
     </div>
   )
 }
