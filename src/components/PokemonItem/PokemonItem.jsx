@@ -1,8 +1,13 @@
 import React from 'react'
-
-const PokemonItem = () => {
+const PokemonItem = (props) => {
+  const onPokemonItemClick = ()=> {
+    props.onClick(props.pokemon);
+  }
   return (
-    <div>PokemonItem</div>
+    <div
+    onClick={onPokemonItemClick}
+    ><p>{props.pokemon.name}</p> <img src={props.pokemon.sprites.animated}></img></div>
+    
   )
 }
 

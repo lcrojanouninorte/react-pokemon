@@ -1,8 +1,12 @@
 import React from 'react'
 
-const PokemonCardItem = () => {
+const PokemonCardItem = (props) => {
   return (
-    <div>PokemonCard</div>
+    <div  >
+
+{ props.pokemon.name} 
+             <img src={props.pokemon.sprites.large}></img>
+    </div>
   )
 }
 
