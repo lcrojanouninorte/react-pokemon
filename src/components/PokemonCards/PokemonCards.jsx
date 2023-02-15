@@ -1,25 +1,26 @@
 import React from 'react'
 import PokemonCardItem from '../PokemonCardItem/PokemonCardItem'
+import s from "./styles.module.css";
 const PokemonCards = (props) => {
   return (
-    <div>
+    <div >
     
-        <ul>
+        <div className={s.container}>
         {
           props.selectedPokemons ?  
           props.selectedPokemons.map((pokemon, idx)=>(
-            <li  key={idx}>
+            <div     className={s.pokemon_container} key={idx}>
              < PokemonCardItem
-             
+          
               pokemon={pokemon}
              />
              
            
-            </li>
+            </div>
           ))
           : "No pokemons selected"
         }
-          </ul> 
+          </div> 
     </div>
    
   

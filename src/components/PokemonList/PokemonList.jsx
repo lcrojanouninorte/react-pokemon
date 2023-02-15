@@ -12,7 +12,7 @@ const PokemonList = (props) => {
         POKEMONS.map((pokemon, idx)=>(
           <li key={idx}>
            <PokemonItem
-          
+            isSelected={props.pokemon === pokemon}
            pokemon={pokemon}
            onClick={props.onPokemonItemClick}
            />

@@ -6,17 +6,20 @@ import s from "./styles.module.css";
 function App() {
   const [currentPokemon, setCurrentPokemon] = useState([]);
   const [selectedPokemons, setSelectedPokemons] = useState([]);
-
-  const onPokemonItemClick = (pokemon) => {
+   const onPokemonItemClick = (pokemon) => {
     setCurrentPokemon(pokemon);
   };
 
+  const teamLimit = 6;
+  
   const onAddBtnClick = () => {
     //limit to 5 pokemons
 
-    let pokemons = [...selectedPokemons];
-    pokemons[pokemons.length % 5] = currentPokemon;
-
+    let pokemons = [currentPokemon,...selectedPokemons];
+    if(pokemons.length>teamLimit){
+      pokemons.pop()
+    }
+     
     // Set state
     setSelectedPokemons(pokemons);
   };
@@ -25,9 +28,7 @@ function App() {
       <h1 style={{ textAlign: "center" }}>Pokemon team</h1>
       <div className={s.container}>
         <div>
-        <button onClick={onAddBtnClick}>
-            Add {currentPokemon.name} to your team
-          </button>
+       
           <div className={s.card}>
             <PokemonList
               pokemon={currentPokemon}
@@ -37,7 +38,10 @@ function App() {
 
         
         </div>
-
+ <button onClick={onAddBtnClick}>
+            Add {currentPokemon?.name} to your team  
+            <img src={currentPokemon?.sprites?.normal}></img>
+          </button>
         <div >
           <p>Your team: {selectedPokemons.length}</p>
           <div className={s.card}>
